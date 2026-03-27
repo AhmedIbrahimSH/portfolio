@@ -67,7 +67,7 @@ const education = [
     start: "2020", end: "2025",
     gpa: "3.34 / 4.0",
     location: "Cairo, Egypt",
-    logo: "/images/asu.png",
+    logo: process.env.PUBLIC_URL + "/images/asu.png",
     logoType: "img",
     color: "#00ff88",
     highlights: [

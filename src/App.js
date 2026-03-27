@@ -673,7 +673,7 @@ export default function App() {
         
         <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: t.navBg, borderBottom: `1px solid ${t.navBorder}`, backdropFilter: "blur(12px)" }}>
           <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", height: "52px" }}>
-            <div onClick={() => scrollTo("hero")} style={{ fontFamily: "'Syne', sans-serif", fontWeight: "800", fontSize: "15px", color: t.textBright, cursor: "pointer", marginRight: "16px" }}>Ahmed Sharaf</div>
+            <div onClick={() => scrollTo("hero")} style={{ fontFamily: "Inter, system-ui, sans-serif", fontWeight: "800", fontSize: "15px", color: t.textBright, cursor: "pointer", marginRight: "16px" }}>Ahmed Sharaf</div>
             <div style={{ display: "flex", alignItems: "center", gap: "2px", flex: 1, overflowX: "auto" }}>
               {NAV_ITEMS.map((item) => {
   const isActive = activeSection === item.id;

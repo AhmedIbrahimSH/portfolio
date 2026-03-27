@@ -12,11 +12,7 @@ const jobs = [
     start: "Feb 2026", end: "present", type: "full-time",
     stack: ["C++", "Python", "AUTOSAR"],
     bullets: [
-      "Led redesign of payment retry logic, reducing failed transaction rate by 34%",
-      "Architected real-time fraud detection pipeline processing 2M+ events/day using Kafka",
-      "Mentored 4 junior engineers, running weekly code review sessions and 1:1s",
-      "Shipped Stripe Tax v2 serving 40k+ merchants across 30 countries",
-      "Reduced p99 API latency from 420ms to 85ms via query optimization and caching layer",
+    
     ],
   },
   {
@@ -27,9 +23,15 @@ const jobs = [
     start: "Feb 2024", end: "Aug 2025", type: "internship",
     stack: ["Python", "C++", "Bash", "Jenkins" , "Java"],
     bullets: [
-      "Shipped Clip Discovery feature seen by 15M+ users within first week",
-      "Built GraphQL schema for clips recommendation service from scratch",
-      "Fixed 12 high-priority bugs in the live video player pipeline",
+      "OTN Protocol Implementation: Developed features for an OTN tool processing millions of frames, using CPP and \
+Python including Forward Error Correction (FEC), frame parsing, Cyclic Redundancy Check (CRC), and internal \
+frame handling in compliance with the OTN standard",
+"Distributed Build System Engineering: Architected a high-performance build automation engine using Python , Jenkins \
+and Bash, optimizing resource allocation to reduce build latency by 60%. This system eliminated 90% of manual \
+deployment errors and reclaimed 20+ hours of engineering time monthly.",
+"Developer Tools Design: Spearheaded the development of a cross-platform automation suite using Python and PyQt, \
+translating complex GUI-based manual workflows into efficient programmatic APIs. The tool achieved a 75% reduction in task \
+execution time by abstracting low-level system interactions." 
     ],
   },
    {
@@ -40,11 +42,7 @@ const jobs = [
     start: "Aug 2023", end: "Sep 2023", type: "internship",
     stack: ["C++", "Python", "AUTOSAR"],
     bullets: [
-      "Led redesign of payment retry logic, reducing failed transaction rate by 34%",
-      "Architected real-time fraud detection pipeline processing 2M+ events/day using Kafka",
-      "Mentored 4 junior engineers, running weekly code review sessions and 1:1s",
-      "Shipped Stripe Tax v2 serving 40k+ merchants across 30 countries",
-      "Reduced p99 API latency from 420ms to 85ms via query optimization and caching layer",
+    
     ],
   },
    {
@@ -55,11 +53,7 @@ const jobs = [
     start: "Jul 2023", end: "Aug 2023", type: "internship",
     stack: ["C++", "Python", "AUTOSAR"],
     bullets: [
-      "Led redesign of payment retry logic, reducing failed transaction rate by 34%",
-      "Architected real-time fraud detection pipeline processing 2M+ events/day using Kafka",
-      "Mentored 4 junior engineers, running weekly code review sessions and 1:1s",
-      "Shipped Stripe Tax v2 serving 40k+ merchants across 30 countries",
-      "Reduced p99 API latency from 420ms to 85ms via query optimization and caching layer",
+     
     ],
   }
  
@@ -79,7 +73,7 @@ const education = [
     highlights: [
       "Thesis: 'Using GANs AI model to generate HANDWRITTEN Arabic text images using semi supervised approach'",
       "TA for 6.006 Algorithms — taught recitations to 60 students",
-      "Member of a lot of student activites : Google Developer Student Club , Enactus",
+      "Member of student activites : Google Developer Student Club , Enactus , Cairo Runners",
       "Coursework: Distributed Systems, Compilers, Machine Learning, Computer Architecture",
     ],
     courses: ["6.824 Distributed Systems", "6.035 Compilers internals", "6.002 Database Systems", "6.867 Machine Learning", "6.004 Operating Systems", "6.046 Algorithms and Data Structures"],
@@ -216,7 +210,7 @@ function HeroSection({ t, scrollToFooter }) {
         <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#00ff88", animation: "blink 2s infinite", boxShadow: "0 0 8px #00ff88" }} />
         <span style={{ fontFamily: "monospace", fontSize: "13px", color: t.textMuted }}>ahmed.sharaf ~ available for work</span>
       </div>
-      <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(48px,9vw,96px)", fontWeight: "800", color: t.textBright, letterSpacing: "-4px", lineHeight: 0.95, marginBottom: "28px" }}>
+      <h1 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(48px,9vw,96px)", fontWeight: "800", color: t.textBright, letterSpacing: "-4px", lineHeight: 0.95, marginBottom: "28px" }}>
         Ahmed<br />
         <span>Sharaf</span>
       </h1>
@@ -263,7 +257,7 @@ function WorkSection({ t }) {
           <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#00ff88", animation: "blink 2s infinite", boxShadow: "0 0 8px #00ff88" }} />
           <span style={{ fontFamily: "monospace", fontSize: "13px", color: t.textMuted }}>git log --all --oneline</span>
         </div>
-        <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: "800", color: t.textBright, letterSpacing: "-2px", lineHeight: 1 }}>work history</h2>
+        <h2 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: "800", color: t.textBright, letterSpacing: "-2px", lineHeight: 1 }}>Work history</h2>
         <p style={{ fontFamily: "'DM Sans', sans-serif", color: t.textMuted, marginTop: "10px", fontSize: "15px" }}>{jobs.length} commits · click any row to expand</p>
       </div>
 
@@ -385,9 +379,9 @@ function EducationSection({ t }) {
     <section id="education" style={{ paddingTop: "100px", paddingBottom: "80px", borderTop: `1px solid ${t.border}` }}>
       <div style={{ marginBottom: "48px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-          <span style={{ fontFamily: "monospace", fontSize: "13px", color: t.textMuted }}>git log --author="academia"</span>
+          {/* <span style={{ fontFamily: "monospace", fontSize: "13px", color: t.textMuted }}>git log --author="academia"</span> */}
         </div>
-        <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: "800", color: t.textBright, letterSpacing: "-2px", lineHeight: 1 }}>education</h2>
+        <h2 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: "800", color: t.textBright, letterSpacing: "-2px", lineHeight: 1 }}>Education</h2>
         <p style={{ fontFamily: "'DM Sans', sans-serif", color: t.textMuted, marginTop: "10px", fontSize: "15px" }}>{education.length} institutions · click to expand</p>
       </div>
 
@@ -522,7 +516,7 @@ function ComingSoonSection({ id, label, t }) {
   return (
     <section id={id} style={{ paddingTop: "100px", paddingBottom: "80px", borderTop: `1px solid ${t.border}` }}>
       <div style={{ marginBottom: "48px" }}>
-        <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: "800", color: t.textBright, letterSpacing: "-2px", lineHeight: 1 }}>{label}</h2>
+        <h2 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: "800", color: t.textBright, letterSpacing: "-2px", lineHeight: 1 }}>{label}</h2>
       </div>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "200px", gap: "16px", textAlign: "center" }}>
         <div style={{ fontFamily: "monospace", fontSize: "48px", opacity: 0.1, lineHeight: 1 }}>⬡</div>
@@ -755,8 +749,8 @@ export default function App() {
           <WorkSection t={t} />
           <EducationSection t={t} />
           <OSSSection id="oss" label="open source" t={t} />
-          <ComingSoonSection id="projects" label="side projects" t={t} />
-          <ComingSoonSection id="certified" label="certified" t={t} />
+          <ComingSoonSection id="projects" label="Side projects" t={t} />
+          <ComingSoonSection id="certified" label="Certified" t={t} />
           {/* <ComingSoonSection id="courses" label="courses" t={t} /> */}
 
           <div id="site-footer" style={{ borderTop: `1px solid ${t.border}`, padding: "32px 0", textAlign: "center" }}>

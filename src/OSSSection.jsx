@@ -163,10 +163,10 @@ export default function OSSSection({ t: outerT }) {
 
       <div style={{ marginBottom: 48 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-          <span style={{ fontFamily: "monospace", fontSize: 13, color: th.textMuted }}>git log --author="open-source"</span>
+          {/* <span style={{ fontFamily: "monospace", fontSize: 13, color: th.textMuted }}>git log --author="open-source"</span> */}
         </div>
-        <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: 800, color: th.textBright, letterSpacing: "-2px", lineHeight: 1 }}>
-          open source
+        <h2 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: 800, color: th.textBright, letterSpacing: "-2px", lineHeight: 1 }}>
+          Open source
         </h2>
         {status === "done" && (
           <p style={{ fontFamily: "'DM Sans', sans-serif", color: th.textMuted, marginTop: 10, fontSize: 15 }}>

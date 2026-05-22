@@ -165,9 +165,20 @@ export default function OSSSection({ t: outerT }) {
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
           {/* <span style={{ fontFamily: "monospace", fontSize: 13, color: th.textMuted }}>git log --author="open-source"</span> */}
         </div>
-        <h2 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: 800, color: th.textBright, letterSpacing: "-2px", lineHeight: 1 }}>
-          Open source
-        </h2>
+        <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+          <h2 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(32px,6vw,54px)", fontWeight: 800, color: th.textBright, letterSpacing: "-2px", lineHeight: 1 }}>
+            Open source
+          </h2>
+          <a href="https://my-open-source-contributions.vercel.app/AhmedIbrahimSH" target="_blank" rel="noopener noreferrer"
+            style={{ color: th.textMuted, textDecoration: "none", display: "flex", alignItems: "center", marginTop: "4px", transition: "color 0.15s" }}
+            onMouseOver={e => e.currentTarget.style.color = "#00ff88"}
+            onMouseOut={e => e.currentTarget.style.color = th.textMuted}
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+            </svg>
+          </a>
+        </div>
         {status === "done" && (
           <p style={{ fontFamily: "'DM Sans', sans-serif", color: th.textMuted, marginTop: 10, fontSize: 15 }}>
             {totalPRs} merged PRs across {groups.length} repo{groups.length !== 1 ? "s" : ""} · sorted by latest activity

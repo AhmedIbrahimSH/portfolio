@@ -12,6 +12,23 @@ import OSSSection from "./OSSSection";
 //     tags: ["Linux", "Kernel", "SRE"]
 //   }
 // ];
+
+
+const INVENTORY_STACK = [
+  { name: 'C++', color: '#00599C', text: '#ffffff', icon: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg' },
+  { name: 'Python', color: '#3776AB', text: '#FFD43B', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' },
+  { name: 'React', color: '#20232A', text: '#61DAFB', icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' },
+  { name: 'Spring', color: '#6DB33F', text: '#ffffff', icon: 'https://img.icons8.com/?size=100&id=90519&format=png&color=000000' },
+  { name: 'Postgres', color: '#336791', text: '#ffffff', icon: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fpostgresql-logo-png-transparent.png&f=1&nofb=1&ipt=9382df3a49a8879855e2a11c74b4eab218b7a78ae5a089628b71fec2efb9a84a' },
+  { name: 'TypeScript', color: '#3178C6', text: '#ffffff', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg' },
+  { name: 'AWS', color: '#232F3E', text: '#FF9900', border: '#FF990055', icon: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.icons8.com%2FandroidL%2F512%2FFFFFFF%2Famazon-web-services.png&f=1&nofb=1&ipt=6651123bd2c470482b9e8dc7be93db77e50f217e251b069f266b661f114f2b4d' },
+  { name: 'Bash', color: '#4EAA25', text: '#ffffff', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg' },
+  { name: 'Linux', color: '#000000', text: '#FCC624', border: '#333333', icon: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg' },
+  { name: 'Docker', color: '#2496ED', text: '#ffffff', icon: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstorage.googleapis.com%2Fstatic.ianlewis.org%2Fprod%2Fimg%2Fdocker%2Flarge_v-trans.png&f=1&nofb=1&ipt=348672af87fd639747a7eaa7c2c8bf471b808a02a277486310922f16bf2dd38d' },
+  { name: 'K8s', color: '#326CE5', text: '#ffffff', icon: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg' },
+  { name: 'Go', color: '#00ADD8', text: '#ffffff', icon: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fashitani.jp%2Fgolangtips%2Fgopher.png&f=1&nofb=1&ipt=394e0ee146f6207637bfc32b048680243776694868e490e30d379b911a969259' },
+];
+
 const jobs = [
   {
     hash: "a3f8c21", 
@@ -152,8 +169,8 @@ const education = [
 
 const stackColors = {
   TypeScript: "#3178C6", Go: "#00ADD8", Tensorflow: "#61DAFB", PostgreSQL: "#336791",
-  Kafka: "#231F20", "PyTorch": "#339933", AUTOSAR: "#6933FF", React: "#244C5A",
-  "C++": "#ED8B00", Python: "#3776AB", Bash: "#E25A1C", Foundry: "#1A1A2E",
+  Kafka: "#231F20", "PyTorch": "#EE4C2C", AUTOSAR: "#6933FF", Spring: "#6DB33F", React: "#20232A",
+  "C++": "#00599C", Python: "#3776AB", Bash: "#4EAA25", Foundry: "#1A1A2E",
   Kubernetes: "#326CE5", Jenkins: "#EE4C2C", Redis: "#DC382D", FastAPI: "#009688",
   DynamoDB: "#4053D6", OpenCV: "#E10098", C: "#555555", Java: "#5D4F85",
   D: "#0076A8", "x86 ASM": "#666666",
@@ -241,34 +258,48 @@ function WorkModal({ job, onClose, t }) {
 function HeroSection({ t, scrollToFooter }) {
   return (
     <section id="hero" style={{ minHeight: "90vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: "80px" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-        <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#00ff88", animation: "blink 2s infinite", boxShadow: "0 0 8px #00ff88" }} />
-        <span style={{ fontFamily: "monospace", fontSize: "13px", color: t.textMuted }}>ahmed.sharaf ~ available for work</span>
+      {/* Dual column responsive container */}
+      <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: "40px", flexWrap: "wrap", width: "100%" }}>
+        
+        {/* Left column info */}
+        <div style={{ flex: "1 1 500px", minWidth: "300px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+            <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#00ff88", animation: "blink 2s infinite", boxShadow: "0 0 8px #00ff88" }} />
+            <span style={{ fontFamily: "monospace", fontSize: "13px", color: t.textMuted }}>ahmed.sharaf ~ available for work</span>
+          </div>
+          <h1 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(48px,9vw,96px)", fontWeight: "800", color: t.textBright, letterSpacing: "-4px", lineHeight: 0.95, marginBottom: "28px" }}>
+            Ahmed<br />
+            <span>Sharaf</span>
+          </h1>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px,2vw,18px)", color: t.textMuted, maxWidth: "520px", lineHeight: 1.7, marginBottom: "" }}>
+            Software Engineer · Cairo, Egypt.
+          </p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px,2vw,18px)", color: t.textMuted, maxWidth: "520px", lineHeight: 1.7, marginBottom: "" }}>
+            Building scalable systems and beautiful interfaces.
+          </p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px,2vw,18px)", color: t.textMuted, maxWidth: "520px", lineHeight: 1.7, marginBottom: "40px" }}>
+            Currently SWE @<strong style={{ fontWeight: 'bold', color: t.textBright }}>Valeo</strong> <br></br> Previous SWE intern @<strong style={{color: t.textBright, fontWeight: 'bold' }}>Siemens DISW</strong>
+          </p>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <a href="#work" onClick={(e) => { e.preventDefault(); document.getElementById("work").scrollIntoView({ behavior: "smooth" }); }}
+              style={{ fontFamily: "monospace", fontSize: "13px", padding: "10px 22px", borderRadius: "8px", background: "#00ff88", color: "#010409", border: "none", cursor: "pointer", fontWeight: "600", textDecoration: "none" }}>
+              view work →
+            </a>
+            <button onClick={scrollToFooter}
+              style={{ fontFamily: "monospace", fontSize: "13px", padding: "10px 22px", borderRadius: "8px", background: "transparent", color: t.textMuted, border: `1px solid ${t.border}`, cursor: "pointer", textDecoration: "none" }}>
+              contact me
+            </button>
+          </div>
+        </div>
+
+        {/* Right column: Beautifully animated tech stack chamber */}
+        <div style={{ flex: "0 0 320px", display: "flex", justifyContent: "center", width: "100%", margin: "20px 0" }}>
+          <TechStackChamber t={t} />
+        </div>
+
       </div>
-      <h1 style={{ fontFamily: "Inter, system-ui, sans-serif", fontSize: "clamp(48px,9vw,96px)", fontWeight: "800", color: t.textBright, letterSpacing: "-4px", lineHeight: 0.95, marginBottom: "28px" }}>
-        Ahmed<br />
-        <span>Sharaf</span>
-      </h1>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px,2vw,18px)", color: t.textMuted, maxWidth: "520px", lineHeight: 1.7, marginBottom: "" }}>
-        Software Engineer · Cairo, Egypt.
-      </p>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px,2vw,18px)", color: t.textMuted, maxWidth: "520px", lineHeight: 1.7, marginBottom: "" }}>
-        Building scalable systems and beautiful interfaces.
-      </p>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px,2vw,18px)", color: t.textMuted, maxWidth: "520px", lineHeight: 1.7, marginBottom: "40px" }}>
-        Currenly SWE @<strong style={{ fontWeight: 'bold', color: 'white' }}>Valeo</strong> <br></br> Previous SWE intern @<strong style={{color: 'white', fontWeight: 'bold' }}>Siemens DISW</strong>
-      </p>
-      <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-        <a href="#work" onClick={(e) => { e.preventDefault(); document.getElementById("work").scrollIntoView({ behavior: "smooth" }); }}
-          style={{ fontFamily: "monospace", fontSize: "13px", padding: "10px 22px", borderRadius: "8px", background: "#00ff88", color: "#010409", border: "none", cursor: "pointer", fontWeight: "600", textDecoration: "none" }}>
-          view work →
-        </a>
-        <button onClick={scrollToFooter}
-          style={{ fontFamily: "monospace", fontSize: "13px", padding: "10px 22px", borderRadius: "8px", background: "transparent", color: t.textMuted, border: `1px solid ${t.border}`, cursor: "pointer", textDecoration: "none" }}>
-          contact me
-        </button>
-      </div>
-      <div style={{ marginTop: "80px", display: "flex", alignItems: "center", gap: "8px", color: t.textFaint, fontFamily: "monospace", fontSize: "11px" }}>
+
+      <div style={{ marginTop: "60px", display: "flex", alignItems: "center", gap: "8px", color: t.textFaint, fontFamily: "monospace", fontSize: "11px" }}>
         <div style={{ width: "24px", height: "1px", background: t.border }} />
         scroll to explore
       </div>
@@ -836,6 +867,111 @@ const CONTACT_LINKS = [
 },
 ];
 
+
+function TechStackChamber({ t }) {
+  const [isLidOpen, setIsLidOpen] = useState(false);
+
+  useEffect(() => {
+    const openTimer = setTimeout(() => setIsLidOpen(true), 1000);
+    const closeTimer = setTimeout(() => setIsLidOpen(false), 5400);
+    return () => { clearTimeout(openTimer); clearTimeout(closeTimer); };
+  }, []);
+
+  return (
+    <div style={{ position: "relative", width: "320px", height: "420px", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+      
+      {/* Visual Slid Lid */}
+      <div 
+        style={{
+          position: "absolute",
+          top: "92px",
+          left: "50%",
+          transform: isLidOpen 
+            ? "translate(100px, -90px) rotate(25deg)" 
+            : "translate(-50%, 0) rotate(0deg)",
+          opacity: isLidOpen ? 0 : 1,
+          width: "280px",
+          height: "10px",
+          backgroundColor: t.borderAlt,
+          borderRadius: "6px",
+          borderTop: `1px solid ${t.textMuted}33`,
+          transition: "all 1.0s cubic-bezier(0.25, 1, 0.5, 1)",
+          zIndex: 10,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.6)"
+        }}
+      >
+        <div style={{ width: "36px", height: "3px", backgroundColor: t.textFaint, borderRadius: "2px" }} />
+      </div>
+
+      {/* The Glass Container Structure */}
+      <div 
+        style={{
+          width: "300px",
+          height: "320px",
+          margin: "0 auto",
+          backgroundColor: t.surfaceAlt + "55",
+          borderLeft: `5px solid ${t.borderAlt}`,
+          borderRight: `5px solid ${t.borderAlt}`,
+          borderBottom: `5px solid ${t.borderAlt}`,
+          borderRadius: "0 0 20px 20px",
+          padding: "12px 10px 10px 10px",
+          position: "relative",
+          boxShadow: "inset 0 -15px 30px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.4)",
+          backdropFilter: "blur(4px)",
+          overflow: "hidden"
+        }}
+      >
+        {/* Subtle interior lighting */}
+        <div style={{ position: "absolute", inset: 0, opacity: 0.08, pointerEvents: "none", backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
+
+        {/* Dynamic Matrix Stack */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "6px", height: "100%", alignContent: "end" }}>
+          {INVENTORY_STACK.map((item, index) => {
+            // Calculate individual staggers per block:
+            // Starts dropping row by row at 1.8s, columns separated by 100ms
+            const delay = 1800 + (Math.floor(index / 3) * 550) + ((index % 3) * 90);
+            return (
+              <div key={item.name} style={{ height: "64px", position: "relative" }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundColor: item.color,
+                    color: item.text,
+                    border: `1px solid ${item.border || "rgba(255,255,255,0.15)"}`,
+                    borderRadius: "8px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "4px 2px",
+                    textAlign: "center",
+                    boxShadow: "0 4px 8px rgba(0,0,0,0.25)",
+                    opacity: 0,
+                    animation: "dropBounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
+                    animationDelay: `${delay}ms`,
+                  }}
+                >
+                  <img
+                    src={item.icon}
+                    alt={item.name}
+                    style={{ width: "100%", height: "100%", objectFit: "contain", padding: "10px" }}
+                    onError={(e) => { e.target.style.display = "none"; }}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 // ─── FLOATING CONTACT BUTTON ──────────────────────────────────────────────────
 
 function FloatingContactButton({ t, scrollToFooter }) {
@@ -873,7 +1009,7 @@ export default function App() {
 
   useEffect(() => {
 const substackFeedUrl = "https://ahmedsharafeldin.substack.com/feed";
-const corsProxy = `https://api.allorigins.win/get?url=${encodeURIComponent(substackFeedUrl)}`;
+const corsProxy = `https://api.allorigins.win/get?url=${encodeURIComponent(substackFeedUrl)}&t=${Date.now()}`;
 
 fetch(corsProxy)
   .then((res) => res.json())
@@ -881,18 +1017,25 @@ fetch(corsProxy)
     const parser = new DOMParser();
     const xml = parser.parseFromString(data.contents, "text/xml");
     const items = Array.from(xml.querySelectorAll("item"));
-    const parsedPosts = items.map((item) => ({
-      id: item.querySelector("guid")?.textContent || Math.random().toString(),
-      date: new Date(item.querySelector("pubDate")?.textContent).toLocaleDateString("en-US", { month: "short", year: "numeric" }),
-      title: item.querySelector("title")?.textContent || "",
-      excerpt: (item.querySelector("description")?.textContent || "")
-        .replace(/<[^>]*>/g, "")
-        .replace(/\s+/g, " ")
-        .trim()
-        .substring(0, 150) + "...",
-      link: item.querySelector("link")?.textContent || "",
-      tags: Array.from(item.querySelectorAll("category")).map((c) => c.textContent).slice(0, 3) || ["newsletter"],
-    }));
+    const parsedPosts = items.map((item) => {
+      // <link> in RSS XML sits as a text node between elements — nextSibling trick is more reliable
+      const linkNode = item.querySelector("link");
+      const link = linkNode?.textContent?.trim() ||
+        linkNode?.nextSibling?.nodeValue?.trim() ||
+        item.querySelector("guid")?.textContent?.trim() || "";
+      return {
+        id: item.querySelector("guid")?.textContent || Math.random().toString(),
+        date: new Date(item.querySelector("pubDate")?.textContent).toLocaleDateString("en-US", { month: "short", year: "numeric" }),
+        title: item.querySelector("title")?.textContent || "",
+        excerpt: (item.querySelector("description")?.textContent || "")
+          .replace(/<[^>]*>/g, "")
+          .replace(/\s+/g, " ")
+          .trim()
+          .substring(0, 150) + "...",
+        link,
+        tags: Array.from(item.querySelectorAll("category")).map((c) => c.textContent).slice(0, 3) || ["newsletter"],
+      };
+    });
     setBlogPosts(parsedPosts);
   })
   .catch((err) => console.error("Error fetching Substack feed:", err));
@@ -959,6 +1102,7 @@ fetch(corsProxy)
         @keyframes fadeIn { from{opacity:0} to{opacity:1} }
         @keyframes slideUp { from{opacity:0;transform:translateY(20px) scale(0.97)} to{opacity:1;transform:translateY(0) scale(1)} }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+        @keyframes dropBounce { from{opacity:0;transform:translateY(-50px)} to{opacity:1;transform:translateY(0)} }
         .pill-btn { transition: all 0.15s; cursor: pointer; }
         .pill-btn:hover { opacity: 0.8; }
         ::-webkit-scrollbar { width: 4px; }

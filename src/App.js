@@ -35,7 +35,7 @@ const jobs = [
     company: "Valeo", 
     logo: process.env.PUBLIC_URL + "/images/v.png", 
     role: "Software Engineer Contractor",
-    start: "Feb 2026", end: "present", type: "full-time",
+    start: "Feb 2026", end: "Jun 2026", type: "full-time",
     stack: ["C++", "Python", "AUTOSAR"],
     bullets: [
     "Developing and maintaining continuous health monitoring (SHM) frameworks for automotive Power Control \
@@ -278,7 +278,7 @@ function HeroSection({ t, scrollToFooter }) {
             Building scalable systems and beautiful interfaces.
           </p>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px,2vw,18px)", color: t.textMuted, maxWidth: "520px", lineHeight: 1.7, marginBottom: "40px" }}>
-            Currently SWE @<strong style={{ fontWeight: 'bold', color: t.textBright }}>Valeo</strong> <br></br> Previous SWE intern @<strong style={{color: t.textBright, fontWeight: 'bold' }}>Siemens DISW</strong>
+            Previous SWE @<strong style={{ fontWeight: 'bold', color: t.textBright }}>Valeo</strong> <br></br> Previous SWE intern @<strong style={{color: t.textBright, fontWeight: 'bold' }}>Siemens DISW</strong>
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <a href="#work" onClick={(e) => { e.preventDefault(); document.getElementById("work").scrollIntoView({ behavior: "smooth" }); }}
@@ -906,8 +906,11 @@ function TechStackChamber({ t }) {
         <div style={{ width: "36px", height: "3px", backgroundColor: t.textFaint, borderRadius: "2px" }} />
       </div>
 
+      {/* Label */}
+      <div style={{ fontFamily: "monospace", fontSize: "12px", color: "#ffffff", fontWeight: "700", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px", textAlign: "center", width: "300px", margin: "0 auto 8px auto" }}>My tech stack</div>
+
       {/* The Glass Container Structure */}
-      <div 
+      <div
         style={{
           width: "300px",
           height: "320px",
